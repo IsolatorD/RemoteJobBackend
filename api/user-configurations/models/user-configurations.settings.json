@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_configurations",
+  "info": {
+    "name": "User Configurations"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "user_configurations"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "dark_mode",
+        "show_documents",
+        "show_contact_data",
+        "show_activity",
+        "receive_groups_notifications",
+        "receive_posts_notifications",
+        "receive_request_friend_notifications",
+        "receive_message_notifications"
+      ]
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

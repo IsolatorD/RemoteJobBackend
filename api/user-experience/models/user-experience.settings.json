@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_experiences",
+  "info": {
+    "name": "User Experience"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "user_experiences"
+    },
+    "Bussines": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    }
+  }
+}

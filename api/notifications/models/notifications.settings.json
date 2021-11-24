@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "name": "notifications",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "notifications"
+    },
+    "data": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "profile_view",
+        "new_follower",
+        "friend_request",
+        "new_message",
+        "reaction_to_post",
+        "comment_to_post"
+      ]
+    },
+    "readed": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

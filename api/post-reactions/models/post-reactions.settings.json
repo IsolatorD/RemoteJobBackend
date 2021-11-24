@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "post_reactions",
+  "info": {
+    "name": "Post Reactions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post_id": {
+      "via": "post_reactions",
+      "model": "posts"
+    },
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "post_reactions"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "like",
+        "love",
+        "recommend",
+        "upset"
+      ]
+    }
+  }
+}

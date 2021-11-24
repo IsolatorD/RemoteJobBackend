@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "name": "Messages",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sender_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "messages"
+    },
+    "chat_id": {
+      "model": "chats",
+      "via": "messages"
+    },
+    "message": {
+      "type": "richtext"
+    },
+    "readed": {
+      "type": "boolean"
+    },
+    "media": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

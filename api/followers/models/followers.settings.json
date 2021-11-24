@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "followers",
+  "info": {
+    "name": "Followers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "followers"
+    },
+    "follower_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "followers"
+    }
+  }
+}

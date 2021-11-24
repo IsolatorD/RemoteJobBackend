@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chats",
+  "info": {
+    "name": "Chats"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "chats"
+    },
+    "receiver_id": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "chats"
+    },
+    "messages": {
+      "via": "chat_id",
+      "collection": "messages"
+    }
+  }
+}
